@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Inline editable placeholder styling */
+.inline-editable:empty::before {
+  content: attr(data-placeholder);
+  color: hsl(var(--muted-foreground));
+  font-style: italic;
+  pointer-events: none;
+}
+
+/* Pure Heating & Air Design System - Professional HVAC */
+
+@layer base {
+  :root {
+    /* Core palette - Navy Blue primary with Orange accent */
+    --background: 0 0% 100%;
+    --foreground: 220 26% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 26% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 26% 14%;
+
+    /* Navy Blue primary */
+    --primary: 224 41% 29%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light Cyan secondary */
+    --secondary: 186 54% 71%;
+    --secondary-foreground: 224 41% 20%;
+
+    /* Light gray muted */
+    --muted: 210 40% 98%;
+    --muted-foreground: 220 10% 40%;
+
+    /* Orange accent */
+    --accent: 27 91% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 41% 29%;
+
+    --radius: 0.5rem;
+
+    /* Success color */
+    --success: 145 65% 42%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning color - using brand orange */
+    --warning: 27 91% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Info color - using brand cyan */
+    --info: 186 54% 50%;
+    --info-foreground: 0 0% 100%;
+
+    /* Sidebar */
+    --sidebar-background: 224 41% 25%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 27 91% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 35% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 224 30% 35%;
+    --sidebar-ring: 27 91% 55%;
+
+    /* Chart colors */
+    --chart-1: 224 41% 29%;
+    --chart-2: 186 54% 50%;
+    --chart-3: 27 91% 55%;
+    --chart-4: 145 65% 42%;
+    --chart-5: 0 75% 55%;
+  }
+
+  .dark {
+    --background: 224 30% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 224 30% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 224 30% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 186 54% 60%;
+    --primary-foreground: 224 41% 15%;
+
+    --secondary: 224 30% 25%;
+    --secondary-foreground: 186 40% 85%;
+
+    --muted: 224 20% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 27 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 224 20% 22%;
+    --input: 224 20% 22%;
+    --ring: 186 54% 60%;
+
+    --success: 145 55% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 27 85% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 186 50% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 224 30% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 27 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 25% 20%;
+    --sidebar-accent-foreground: 186 40% 90%;
+    --sidebar-border: 224 20% 18%;
+    --sidebar-ring: 186 54% 60%;
+
+    --chart-1: 186 54% 60%;
+    --chart-2: 224 45% 50%;
+    --chart-3: 27 85% 55%;
+    --chart-4: 145 50% 50%;
+    --chart-5: 0 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(224 41% 35%) 100%);
+  }
+  
+  .gradient-secondary {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(186 54% 80%) 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(27 91% 65%) 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(224 41% 25%) 0%, hsl(224 41% 35%) 100%);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 4px 20px -4px hsl(var(--foreground) / 0.08);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 30px -5px hsl(var(--primary) / 0.25);
+  }
+
+  .shadow-accent {
+    box-shadow: 0 0 30px -5px hsl(var(--accent) / 0.35);
+  }
+
+  /* Scroll reveal animations */
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-scale-hidden {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-scale-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .reveal-left-hidden {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-left-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right-hidden {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-right-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Stagger children delays */
+  .stagger-1 { transition-delay: 0.08s; }
+  .stagger-2 { transition-delay: 0.16s; }
+  .stagger-3 { transition-delay: 0.24s; }
+  .stagger-4 { transition-delay: 0.32s; }
+  .stagger-5 { transition-delay: 0.40s; }
+  .stagger-6 { transition-delay: 0.48s; }
+
+  /* Floating animation for hero elements */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Pulse ring effect */
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.4); }
+    70% { box-shadow: 0 0 0 12px hsl(var(--accent) / 0); }
+    100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0); }
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 2s ease-out infinite;
+  }
+
+  /* Counter number animation */
+  @keyframes count-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-count-up {
+    animation: count-up 0.5s ease-out forwards;
+  }
+
+  /* AC Cold Air Animation keyframes */
+  @keyframes ac-snowfall {
+    0% { opacity: 0; transform: translateY(0) translateX(0) scale(0.7); }
+    8% { opacity: 0.95; }
+    75% { opacity: 0.6; }
+    100% { opacity: 0; transform: translateY(280px) translateX(var(--drift, 0px)) scale(0.3); }
+  }
+
+  .ac-snowfall {
+    animation: ac-snowfall var(--duration, 7s) ease-in-out infinite;
+  }
+
+  @keyframes ac-airflow {
+    0% { opacity: 0; transform: scaleX(0.3) translateY(0); }
+    30% { opacity: 0.7; }
+    100% { opacity: 0; transform: scaleX(1.2) translateY(30px); }
+  }
+
+  .ac-airflow {
+    animation: ac-airflow 4s ease-out infinite;
+  }
+
+  @keyframes ac-frost-shimmer {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; filter: brightness(1.4); }
+  }
+
+  .ac-frost-shimmer {
+    animation: ac-frost-shimmer 3.5s ease-in-out infinite;
+  }
+
+  @keyframes ac-frost-glow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  .ac-frost-glow {
+    animation: ac-frost-glow 4s ease-in-out infinite;
+  }
+}
